@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMA ZAMAN | Media Hub</title>
+    <meta name="description" content="Premium blog for Technology, Lifestyle, and Motivation by CMA Zaman.">
+    <!-- FIX 1: Tailwind dark mode config -->
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        :root { --primary: #3b82f6; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.3s, color 0.3s; }
+        .dark { background-color: #0f172a; color: #f8fafc; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .dark .glass { background: rgba(15, 23, 42, 0.8); border-color: #1e293b; }
+        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        
+        .video-section {
+    padding: 60px 20px;
+    background: #f5f7fa;
+    text-align: center;
+}
+
+.video-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.video-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.video-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="fixed w-full z-50 glass border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-tighter">CMA <span class="text-blue-600">ZAMAN</span></div>
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
+                <a href="index.html#blog" class="hover:text-blue-600 transition">Blog</a>
+                <!-- FIX 2: Was href=".html" — corrected to media.html -->
+                <a href="media.html" class="hover:text-blue-600 transition">Media</a>
+                <a href="index.html#profile" class="hover:text-blue-600 transition">Author</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button id="darkToggle" class="p-2 rounded-full bg-slate-200 dark:bg-slate-800"><i class="fas fa-moon"></i></button>
+                <a href="index.html#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="video-section">
+  <div class="video-container">
+
+    <h2 class="video-title">WELCOME</h2>
+
+    <p class="video-description">
+      Discover insights, ideas, and practical knowledge through this video.
+      Stay inspired, stay informed, and keep growing.
+    </p>
+    
+    <div id="mediaGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/-vSn-pRUFM8"
+        title="YouTube video"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    <div class="video-wrapper">
+      <iframe 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ
+"
+        title="YouTube video"
+        frameborder="0"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+
+  </div>
+</section>
+
+    <section id="media-hub" class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">CMA Media Gallery</h2>
+            </div>
+            
+    
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-2 rounded-full bg-blue-600 text-white font-semibold" data-type="all">All Media</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold" data-type="photo">Photography</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold" data-type="video">Video</button>
+                <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold" data-type="audio">Podcasts</button>
+            </div>
+            
+                            <h5 class="video-title">Watch & Learn</h5>
+                <p class="text-slate-500 max-w-2xl mx-auto">Discover insights, ideas, and practical knowledge through this video. Stay inspired, stay informed, and keep growing.
+                </p>
+            
+            
+
+            <!-- FIX 3: All media items now properly inside mediaGrid -->
+            <div id="mediaGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+               
+
+                <!-- FIX 3: YouTube iframes moved INSIDE mediaGrid as proper media-item divs -->
+                <div class="media-item video rounded-3xl overflow-hidden" style="position:relative; padding-bottom:56.25%; height:0;">
+                    <iframe
+                        src="https://www.youtube.com/embed/M4JktCfaeJU"
+                        style="position:absolute; top:0; left:0; width:100%; height:100%;"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="media-item video rounded-3xl overflow-hidden" style="position:relative; padding-bottom:56.25%; height:0;">
+                    <iframe
+                        src="https://www.youtube.com/embed/VYeufIxENFU"
+                        style="position:absolute; top:0; left:0; width:100%; height:100%;"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <div class="media-item video rounded-3xl overflow-hidden" style="position:relative; padding-bottom:56.25%; height:0;">
+                    <iframe
+                        src="https://www.youtube.com/embed/8uG0bDFI_NE"
+                        style="position:absolute; top:0; left:0; width:100%; height:100%;"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                                <div class="media-item audio p-8 bg-gradient-to-br from-slate-900 to-blue-900 rounded-3xl flex flex-col justify-between aspect-square group">
+                    <div>
+                        <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-microphone-alt text-2xl"></i>
+                        </div>
+                        <h3 class="text-white text-xl font-bold">Awareness Podcast EP 0.1</h3>
+                        <p class="text-blue-200/60 mt-2">Topic: Roots🏝️</p>
+                    </div>
+                    <!-- Replace podcast-ep1.mp3 with your actual filename -->
+                    <audio controls class="w-full mt-4" style="filter: invert(1);">
+                        <source src="podcast-ep1.mp3" type="audio/mp3">
+                        Your browser does not support audio.
+                    </audio>
+                </div>
+                <div class="media-item audio p-8 bg-gradient-to-br from-slate-900 to-blue-900 rounded-3xl flex flex-col justify-between aspect-square group">
+    <div>
+        <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-6">
+            <i class="fas fa-microphone-alt text-2xl"></i>
+        </div>
+        <h3 class="text-white text-xl font-bold">Awareness Podcast EP 0.2</h3>
+        <p class="text-blue-200/60 mt-2">Topic: Roots🏝️</p>
+    </div>
+    <!-- Replace podcast-ep1.mp3 with your actual filename -->
+    <audio controls class="w-full mt-4" style="filter: invert(1);">
+        <source src="Podcast_Love- cma zaman2" type="audio/mpeg">
+        Your browser does not support audio.
+        </audio>
+        </div>
+        
+          <section class="pt-31 pb-22 px-6 max-w-4xl mx-auto">
+      <header class="mb-10 text-center">
+          <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold uppercase">Motivation</span>
+          <h1 class="text-4xl md:text-5xl font-bold mt-6 mb-4">How to Maintain Peak Performance in a Tech-Driven World</h1>
+          <div class="flex items-center justify-center space-x-4 text-slate-500 text-sm">
+              <img src="https://ui-avatars.com/api/?name=CMA+Zaman" class="w-8 h-8 rounded-full">
+              <span>By <strong>CMA Zaman</strong></span>
+          </div>
+      </header>
+  </section>
+        <article class="prose prose-lg dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
+            <p class="mb-6 text-xl font-light italic border-l-4 border-blue-600 pl-6">"Technology should be a tool for our evolution, not a cage for our attention."</p>
+            
+            <p class="mb-4">In today's fast-paced environment, the overlap between our digital tools and our lifestyle habits is inseparable. To truly scale your output, you must audit your digital consumption...</p>
+
+            <div class="my-10 p-6 bg-slate-900 rounded-2xl text-white flex items-center gap-6">
+                <button id="playAudio" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition">
+                    <i class="fas fa-play"></i>
+                </button>
+                <div class="flex-1">
+                    <p class="text-sm font-bold">Listen to this article (Podcast Version)</p>
+                    <div class="w-full bg-slate-700 h-1 mt-2 rounded-full overflow-hidden">
+                        <div class="bg-blue-500 h-full w-1/3"></div>
+                    </div>
+                </div>
+                <span class="text-xs opacity-60">12:45</span>
+            </div>
+
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-10 mb-4">The 3 Pillars of CMA Performance</h2>
+            <ul class="list-disc pl-6 space-y-2 mb-10">
+                <li><strong>Digital Fasting:</strong> Turn off notifications for 2 hours daily.</li>
+                <li><strong>Tech Stacking:</strong> Using AI to automate 40% of repetitive tasks.</li>
+                <li><strong>Mental Clarity:</strong> Morning motivation rituals before the first screen.</li>
+            </ul>
+        </article>
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-8 right-8 text-white text-4xl hover:text-blue-500 transition">&times;</button>
+        <div id="lightboxContent" class="max-w-5xl w-full h-auto max-h-[80vh] flex items-center justify-center"></div>
+    </div>
+
+    <!-- FIX 4: Removed stray I'm" text from footer -->
+    <footer class="py-12 border-t border-slate-100 dark:border-slate-800 text-center">
+        <p class="text-slate-400">© 2026 CMA ZAMAN. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkToggle = document.getElementById('darkToggle');
+        darkToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            darkToggle.innerHTML = document.documentElement.classList.contains('dark') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Filtering Logic
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const mediaItems = document.querySelectorAll('.media-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('bg-blue-600', 'text-white'));
+                btn.classList.add('bg-blue-600', 'text-white');
+                const type = btn.dataset.type;
+                mediaItems.forEach(item => {
+                    if (type === 'all' || item.classList.contains(type)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Logic
+        const lightbox = document.getElementById('lightbox');
+        const content = document.getElementById('lightboxContent');
+
+        function openLightbox(type, src) {
+            content.innerHTML = '';
+            if (type === 'video') {
+                content.innerHTML = `<iframe src="${src}" class="w-full aspect-video rounded-xl shadow-2xl" frameborder="0" allowfullscreen></iframe>`;
+            } else if (type === 'image') {
+                content.innerHTML = `<img src="${src}" class="max-w-full max-h-[80vh] rounded-xl shadow-2xl object-contain">`;
+            }
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // FIX 5: closeLightbox was broken across two lines — fixed
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            content.innerHTML = '';
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+                    </html>
+    
