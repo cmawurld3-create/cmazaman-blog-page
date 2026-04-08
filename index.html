@@ -48,6 +48,66 @@
     .dark-mode-notice {
         display: none;
     }
+    <style>
+/* Overlay background */
+#login-popup {
+    backdrop-filter: blur(8px);
+}
+
+/* Popup box */
+#login-popup .popup-box {
+    animation: fadeInScale 0.3s ease;
+}
+
+/* Smooth animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Inputs */
+.popup-input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    outline: none;
+}
+
+.popup-input:focus {
+    border-color: #2563eb;
+}
+
+/* Buttons */
+.popup-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.popup-btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.popup-btn-dark {
+    background: black;
+    color: white;
+}
+
+.popup-btn:hover {
+    opacity: 0.9;
+}
+</style>
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -137,23 +197,6 @@
             </div>
 
             <div id="postsContainer" class="grid md:grid-cols-3 gap-8">
-                <article class="post-card tech card-hover bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
-                    <img src="https://i.postimg.cc/SRbck5jF/IMG-0397.jpg" alt="Tech post" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <span class="text-xs font-bold text-blue-600 uppercase">Awakening/</span>
-                        <span class="text-xs font-bold text-blue-600 uppercase">Awareness/</span>
-                        <span class="text-xs font-bold text-blue-600 uppercase">Spirituality</span>
-                        <h3 class="text-xl font-bold mt-2 mb-3">Consciousness Beyond Time</h3>
-                        <div class="flex items-center text-slate-400 text-xs mb-4">
-                            <span>March 8, 2026</span> • <span>Updated</span>
-                        </div>
-                        <div class="flex justify-between items-center border-t pt-4 border-slate-100 dark:border-slate-700">
-                            <button class="like-btn text-slate-400 hover:text-red-500 transition"><i class="far fa-heart mr-1"></i> 124</button>
-                            <!-- FIX 2: Renamed file link (spaces → hyphens) -->
-                            <a href="#" onclick="openLogin('blog.html#posts')" class="text-blue-600 font-semibold text-sm">See Blog <i class="fas fa-arrow-right ml-1"></i></a>
-                        </div>
-                    </div>
-                </article>
                 
                 <article class="post-card tech card-hover bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
                     <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Tech post" class="w-full h-48 object-cover">
@@ -188,6 +231,23 @@
                         </div>
                     </div>
                 </article>
+                <article class="post-card tech card-hover bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700">
+                    <img src="https://i.postimg.cc/SRbck5jF/IMG-0397.jpg" alt="Tech post" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-xs font-bold text-blue-600 uppercase">Awakening/</span>
+                        <span class="text-xs font-bold text-blue-600 uppercase">Awareness/</span>
+                        <span class="text-xs font-bold text-blue-600 uppercase">Spirituality</span>
+                        <h3 class="text-xl font-bold mt-2 mb-3">Consciousness Beyond Time</h3>
+                        <div class="flex items-center text-slate-400 text-xs mb-4">
+                            <span>April 8, 2026</span> • <span>Updated</span>
+                        </div>
+                        <div class="flex justify-between items-center border-t pt-4 border-slate-100 dark:border-slate-700">
+                            <button class="like-btn text-slate-400 hover:text-red-500 transition"><i class="far fa-heart mr-1"></i> 124</button>
+                            <!-- FIX 2: Renamed file link (spaces → hyphens) -->
+                            <a href="#" onclick="openLogin('blog.html#posts')" class="text-blue-600 font-semibold text-sm">See Blog <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </article>
             
             </div>
         </div>
@@ -204,7 +264,7 @@
                     <img src="https://i.postimg.cc/CLbzr637/media-1772819598763-(1)-(1).jpg" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-center p-4">
                         <i class="fas fa-play-circle text-4xl mb-2"></i>
-                        <span class="text-sm font-bold">Watch Insight podcast</span>
+                        <span class="text-sm font-bold">Watch Insightful podcast</span>
                     </div>
                 </a>
                 <a href="media.html" class="col-span-2 relative group cursor-pointer overflow-hidden rounded-xl h-64">
@@ -354,26 +414,31 @@ transform:scale(1.1);
 }
 
 </style>
-    <div id="login-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:999;">
+    <div id="login-popup" class="hidden fixed inset-0 bg-black/60 flex justify-center items-center z-50">
 
-    <div style="background:white; padding:30px; border-radius:10px; width:90%; max-width:400px; text-align:center;">
-        <h2>🔒 Login Required</h2>
+    <div class="popup-box bg-white dark:bg-slate-800 p-6 rounded-xl w-[90%] max-w-md text-center shadow-lg">
+        
+        <h2 class="text-2xl font-bold mb-2">🔒 Login Required</h2>
+        <p class="text-slate-500 mb-4">Access is restricted</p>
 
-        <input type="email" id="userEmail" placeholder="Enter your email" style="width:100%; padding:10px; margin:10px 0;">
+        <input type="email" id="userEmail" placeholder="Enter your email" class="popup-input">
 
-        <button onclick="requestAccess()" style="padding:10px 20px; margin-bottom:15px;">
+        <button onclick="requestAccess()" class="popup-btn popup-btn-primary mb-4">
             Request Access
         </button>
 
-        <hr>
+        <div class="text-sm text-slate-400 mb-3">OR</div>
 
-        <input type="text" id="username" placeholder="Username" style="width:100%; padding:10px; margin:10px 0;">
-        <input type="password" id="password" placeholder="Password" style="width:100%; padding:10px; margin:10px 0;">
+        <input type="text" id="username" placeholder="Username" class="popup-input">
+        <input type="password" id="password" placeholder="Password" class="popup-input">
 
-        <button onclick="login()" style="padding:10px 20px;">Login</button>
+        <button onclick="login()" class="popup-btn popup-btn-dark">
+            Login
+        </button>
 
-        <br><br>
-        <button onclick="closeLogin()" style="background:none; border:none; color:red;">Cancel</button>
+        <button onclick="closeLogin()" class="mt-4 text-red-500 text-sm">
+            Cancel
+        </button>
     </div>
 
 </div>
@@ -383,7 +448,7 @@ let redirectLink = "";
 // Open popup
 function openLogin(link) {
     redirectLink = link;
-    document.getElementById("login-popup").style.display = "flex";
+    document.getElementById("login-popup").classList.remove("hidden");
 }
 
 // Close popup
@@ -418,9 +483,9 @@ function requestAccess() {
         return;
     }
 
-    let phoneNumber = "234XXXXXXXXXX";
+    let phoneNumber = "2349136671282";
 
-    let message = `Hello, I want access. My email is: ${email}`;
+    let message = `Hello, I want access to a particular section in your blog. My email is: ${email}`;
 
     let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
