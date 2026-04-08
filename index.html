@@ -150,7 +150,7 @@
                         <div class="flex justify-between items-center border-t pt-4 border-slate-100 dark:border-slate-700">
                             <button class="like-btn text-slate-400 hover:text-red-500 transition"><i class="far fa-heart mr-1"></i> 124</button>
                             <!-- FIX 2: Renamed file link (spaces → hyphens) -->
-                            <a href="blog.html#posts" class="text-blue-600 font-semibold text-sm">See Blog <i class="fas fa-arrow-right ml-1"></i></a>
+                            <a href="#" onclick="openLogin('blog.html#posts')" class="text-blue-600 font-semibold text-sm">See Blog <i class="fas fa-arrow-right ml-1"></i></a>
                         </div>
                     </div>
                 </article>
@@ -354,6 +354,78 @@ transform:scale(1.1);
 }
 
 </style>
-    
+    <div id="login-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:999;">
+
+    <div style="background:white; padding:30px; border-radius:10px; width:90%; max-width:400px; text-align:center;">
+        <h2>🔒 Login Required</h2>
+
+        <input type="email" id="userEmail" placeholder="Enter your email" style="width:100%; padding:10px; margin:10px 0;">
+
+        <button onclick="requestAccess()" style="padding:10px 20px; margin-bottom:15px;">
+            Request Access
+        </button>
+
+        <hr>
+
+        <input type="text" id="username" placeholder="Username" style="width:100%; padding:10px; margin:10px 0;">
+        <input type="password" id="password" placeholder="Password" style="width:100%; padding:10px; margin:10px 0;">
+
+        <button onclick="login()" style="padding:10px 20px;">Login</button>
+
+        <br><br>
+        <button onclick="closeLogin()" style="background:none; border:none; color:red;">Cancel</button>
+    </div>
+
+</div>
+    <script>
+let redirectLink = "";
+
+// Open popup
+function openLogin(link) {
+    redirectLink = link;
+    document.getElementById("login-popup").style.display = "flex";
+}
+
+// Close popup
+function closeLogin() {
+    document.getElementById("login-popup").style.display = "none";
+}
+
+// Login
+function login() {
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    if (user === "admin" && pass === "1234") {
+
+        // Save login
+        localStorage.setItem("isLoggedIn", "true");
+
+        // Redirect
+        window.location.href = redirectLink;
+
+    } else {
+        alert("Invalid login details");
+    }
+}
+
+// WhatsApp request
+function requestAccess() {
+    let email = document.getElementById("userEmail").value;
+
+    if (email === "") {
+        alert("Enter your email");
+        return;
+    }
+
+    let phoneNumber = "234XXXXXXXXXX";
+
+    let message = `Hello, I want access. My email is: ${email}`;
+
+    let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+}
+</script>
 </body>
 </html>
