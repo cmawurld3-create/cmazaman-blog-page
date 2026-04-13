@@ -1,299 +1,1079 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CMA ZAMAN | Media Hub</title>
-    <meta name="description" content="Premium blog for Technology, Lifestyle, and Motivation by CMA Zaman.">
-    <!-- FIX 1: Tailwind dark mode config -->
-    <script>
-        tailwind.config = { darkMode: 'class' }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
-        :root { --primary: #3b82f6; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.3s, color 0.3s; }
-        .dark { background-color: #0f172a; color: #f8fafc; }
-        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
-        .dark .glass { background: rgba(15, 23, 42, 0.8); border-color: #1e293b; }
-        .card-hover:hover { transform: translateY(-5px); transition: all 0.3s ease; }
-        
-        .video-section {
-    padding: 60px 20px;
-    background: #f5f7fa;
-    text-align: center;
-}
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0V6M6ZR10K"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-0V6M6ZR10K');
+  </script>
 
-.video-container {
-    max-width: 900px;
-    margin: auto;
-}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CMA ZAMAN | Media Hub</title>
+  <meta name="description" content="Explore the CMA ZAMAN Media Hub — videos, podcasts, photography, and inspirational content by CMA Zaman.">
+  <meta name="author" content="CMA Zaman">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://cmawurld3-create.github.io/cmazaman-blog-page/media.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CMA ZAMAN | Media Hub">
+  <meta property="og:description" content="Videos, podcasts, photography, and inspirational content by CMA Zaman.">
+  <meta property="og:image" content="https://i.postimg.cc/nzHFvGst/IMG_0398.png">
 
-.video-title {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-.video-description {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 30px;
-}
+  <style>
+    /* ═══════════════════════════════════════════
+       ROOT & BASE — matches landing page exactly
+    ═══════════════════════════════════════════ */
+    :root {
+      --gold:        #c9a84c;
+      --gold-light:  #e8c97a;
+      --gold-dim:    #7a6230;
+      --gold-glow:   rgba(201,168,76,0.12);
+      --black:       #060606;
+      --dark:        #0d0d0d;
+      --dark-2:      #121212;
+      --dark-3:      #1a1a1a;
+      --dark-4:      #222222;
+      --dark-5:      #2c2c2c;
+      --text:        #ede8df;
+      --text-muted:  #8a8070;
+      --text-dim:    #504840;
+      --border:      rgba(201,168,76,0.14);
+      --radius-sm:   4px;
+      --radius:      8px;
+      --radius-lg:   16px;
+      --t:           0.3s ease;
+      --font-d:      'Cormorant Garamond', serif;
+      --font-b:      'DM Sans', sans-serif;
+    }
 
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-    </style>
+    body {
+      font-family: var(--font-b);
+      background: var(--black);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.75;
+      overflow-x: hidden;
+      cursor: none;
+    }
+
+    /* Grain texture */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 9998;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; opacity: 0.45;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* Custom cursor */
+    #cursor {
+      position: fixed; z-index: 9999;
+      width: 10px; height: 10px;
+      background: var(--gold); border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%,-50%);
+      transition: width 0.2s ease, height 0.2s ease;
+      mix-blend-mode: difference;
+    }
+
+    #cursor-ring {
+      position: fixed; z-index: 9997;
+      width: 36px; height: 36px;
+      border: 1px solid var(--gold-dim); border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%,-50%);
+      transition: width 0.25s ease, height 0.25s ease;
+      opacity: 0.5;
+    }
+
+    body.hovering #cursor { width: 16px; height: 16px; }
+    body.hovering #cursor-ring { width: 50px; height: 50px; opacity: 0.3; }
+
+    /* ═══════════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════════ */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      height: 68px; display: flex; align-items: center;
+      padding: 0 2.5rem;
+      background: rgba(6,6,6,0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      width: 100%; max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.9rem;
+    }
+
+    .nav-logo-badge {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 1px solid var(--gold-dim);
+      background: var(--dark-3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-d); font-size: 1rem; font-weight: 700;
+      color: var(--gold); overflow: hidden; flex-shrink: 0;
+    }
+
+    .nav-logo-badge img { width: 100%; height: 100%; object-fit: cover; }
+
+    .nav-logo-text { display: flex; flex-direction: column; line-height: 1; }
+
+    .nav-logo-name {
+      font-family: var(--font-d); font-size: 1.15rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase;
+    }
+
+    .nav-logo-sub {
+      font-size: 0.55rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--text-muted); margin-top: 0.15rem;
+    }
+
+    .nav-links {
+      display: flex; list-style: none; align-items: center; gap: 0.2rem;
+    }
+
+    .nav-links a {
+      font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 500; color: var(--text-muted); padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm); transition: color var(--t);
+    }
+
+    .nav-links a:hover, .nav-links a.active-page { color: var(--gold); }
+
+    .nav-right { display: flex; align-items: center; gap: 0.8rem; }
+
+    .nav-cta {
+      font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase;
+      font-weight: 600; color: var(--black);
+      background: var(--gold); padding: 0.55rem 1.4rem;
+      border-radius: var(--radius-sm); transition: var(--t);
+      border: none; cursor: none;
+    }
+
+    .nav-cta:hover { background: var(--gold-light); }
+
+    .burger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: none; padding: 4px;
+    }
+
+    .burger span { display: block; width: 22px; height: 1.5px; background: var(--text-muted); transition: var(--t); }
+
+    /* ═══════════════════════════════════════════
+       PAGE HERO
+    ═══════════════════════════════════════════ */
+    .page-hero {
+      padding: 10rem 2.5rem 5rem;
+      position: relative; overflow: hidden; text-align: center;
+    }
+
+    .page-hero-orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(100px); pointer-events: none;
+    }
+
+    .page-hero-orb-1 {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+      top: -100px; left: 50%; transform: translateX(-50%);
+    }
+
+    .page-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.5rem;
+    }
+
+    .page-hero-eyebrow::before, .page-hero-eyebrow::after {
+      content: ''; display: block; width: 24px; height: 1px; background: var(--gold);
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-d);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300; line-height: 1.1;
+      margin-bottom: 1.2rem; letter-spacing: 0.01em;
+    }
+
+    .page-hero h1 em { color: var(--gold-light); font-style: italic; }
+
+    .page-hero p {
+      font-size: 1rem; color: var(--text-muted);
+      max-width: 520px; margin: 0 auto 0;
+      font-weight: 300; line-height: 1.85;
+    }
+
+    .gold-rule {
+      width: 100%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+    }
+
+    /* ═══════════════════════════════════════════
+       FILTER BAR
+    ═══════════════════════════════════════════ */
+    .filter-bar {
+      background: var(--dark-2);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2.5rem;
+      position: sticky; top: 68px; z-index: 100;
+    }
+
+    .filter-bar-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center; gap: 0;
+      overflow-x: auto; scrollbar-width: none;
+    }
+
+    .filter-bar-inner::-webkit-scrollbar { display: none; }
+
+    .filter-btn {
+      background: none; border: none; cursor: none;
+      font-family: var(--font-b); font-size: 0.68rem; letter-spacing: 0.15em;
+      text-transform: uppercase; font-weight: 500;
+      color: var(--text-muted); padding: 1rem 1.4rem;
+      white-space: nowrap; border-bottom: 2px solid transparent;
+      transition: color var(--t), border-color var(--t);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+
+    .filter-btn i { font-size: 0.75rem; }
+    .filter-btn:hover { color: var(--gold); }
+    .filter-btn.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ═══════════════════════════════════════════
+       SECTION COMMONS
+    ═══════════════════════════════════════════ */
+    section { padding: 5rem 2.5rem; }
+
+    .sec-inner { max-width: 1280px; margin: 0 auto; }
+
+    .sec-label {
+      font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--gold); display: flex; align-items: center; gap: 0.8rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .sec-label::before { content: ''; display: block; width: 24px; height: 1px; background: var(--gold); }
+
+    .sec-title {
+      font-family: var(--font-d); font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300; color: var(--text); margin-bottom: 2.5rem; line-height: 1.2;
+    }
+
+    .sec-title em { color: var(--gold-light); font-style: italic; }
+
+    /* ═══════════════════════════════════════════
+       FEATURED VIDEO
+    ═══════════════════════════════════════════ */
+    .featured-section { background: var(--dark-2); }
+
+    .featured-wrap {
+      display: grid; grid-template-columns: 1.4fr 1fr;
+      gap: 3rem; align-items: center;
+    }
+
+    .featured-video-wrap {
+      position: relative; border-radius: var(--radius-lg);
+      overflow: hidden; border: 1px solid var(--border);
+    }
+
+    .featured-video-wrap::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      z-index: 1;
+    }
+
+    .featured-video-wrap iframe {
+      display: block; width: 100%; aspect-ratio: 16/9; border: none;
+    }
+
+    .featured-text .sec-title { margin-bottom: 1rem; }
+
+    .featured-text p {
+      font-size: 0.92rem; color: var(--text-muted); font-weight: 300;
+      line-height: 1.85; margin-bottom: 1.5rem;
+    }
+
+    .featured-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--black); background: var(--gold);
+      padding: 0.3rem 0.8rem; border-radius: 2px; font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       MEDIA GRID
+    ═══════════════════════════════════════════ */
+    .media-section { background: var(--dark); }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    /* ── Video Card ── */
+    .media-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform var(--t), border-color var(--t), box-shadow var(--t);
+      display: flex; flex-direction: column;
+    }
+
+    .media-card[data-type="video"],
+    .media-card[data-type="photo"] {
+      cursor: none;
+    }
+
+    .media-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-dim);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+
+    .media-card.hidden { display: none !important; }
+
+    /* Video embed */
+    .mc-video {
+      width: 100%; aspect-ratio: 16/9; flex-shrink: 0;
+      position: relative; overflow: hidden;
+    }
+
+    .mc-video iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; border: none;
+    }
+
+    /* Photo */
+    .mc-photo {
+      overflow: hidden; flex-shrink: 0;
+      aspect-ratio: 4/3; position: relative; cursor: none;
+    }
+
+    .mc-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s ease, filter 0.4s ease;
+      filter: brightness(0.8);
+    }
+
+    .media-card:hover .mc-photo img {
+      transform: scale(1.07); filter: brightness(1);
+    }
+
+    .mc-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(6,6,6,0.8) 0%, transparent 55%);
+      display: flex; align-items: flex-end; padding: 1.2rem;
+      opacity: 0; transition: opacity var(--t);
+    }
+
+    .media-card:hover .mc-photo-overlay { opacity: 1; }
+
+    .mc-photo-expand {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gold); color: var(--black);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; margin-left: auto; cursor: none;
+    }
+
+    /* Podcast card */
+    .mc-podcast {
+      background: linear-gradient(135deg, #0d0d0d, #141414);
+      padding: 1.8rem; flex: 1; display: flex; flex-direction: column;
+    }
+
+    .mc-podcast-icon {
+      width: 48px; height: 48px; border-radius: 50%;
+      border: 1px solid var(--gold-dim);
+      background: var(--gold-glow, rgba(201,168,76,0.12));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.1rem; margin-bottom: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    /* Card body (shared) */
+    .mc-body {
+      padding: 1.4rem; flex: 1; display: flex; flex-direction: column;
+    }
+
+    .mc-type-badge {
+      font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--black); background: var(--gold);
+      padding: 0.2rem 0.6rem; border-radius: 2px; font-weight: 700;
+      display: inline-block; margin-bottom: 0.8rem; align-self: flex-start;
+    }
+
+    .mc-title {
+      font-family: var(--font-d); font-size: 1.15rem; font-weight: 600;
+      color: var(--text); line-height: 1.35; margin-bottom: 0.5rem;
+    }
+
+    .mc-desc {
+      font-size: 0.8rem; color: var(--text-muted); font-weight: 300;
+      line-height: 1.65; flex: 1;
+    }
+
+    /* Audio player styling */
+    .mc-audio {
+      margin-top: 1.2rem; width: 100%;
+    }
+
+    audio {
+      width: 100%;
+      filter: invert(1) hue-rotate(180deg) brightness(0.85);
+      border-radius: 4px;
+    }
+
+    /* ═══════════════════════════════════════════
+       ARTICLE HIGHLIGHT
+    ═══════════════════════════════════════════ */
+    .article-section { background: var(--dark-2); }
+
+    .article-card {
+      background: var(--dark-3); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 3rem;
+      position: relative; overflow: hidden;
+      max-width: 860px; margin: 0 auto;
+    }
+
+    .article-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .article-quote {
+      font-family: var(--font-d); font-size: 1.3rem; font-style: italic;
+      color: var(--gold-light); line-height: 1.65;
+      border-left: 2px solid var(--gold);
+      padding-left: 1.5rem; margin-bottom: 2rem;
+    }
+
+    .article-body p {
+      font-size: 0.94rem; color: var(--text-muted); font-weight: 300;
+      line-height: 1.85; margin-bottom: 1rem;
+    }
+
+    .article-pillars {
+      background: var(--dark-4); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.8rem; margin: 2rem 0;
+    }
+
+    .article-pillars h3 {
+      font-family: var(--font-d); font-size: 1.2rem; font-weight: 600;
+      color: var(--text); margin-bottom: 1rem;
+    }
+
+    .pillar-item {
+      display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.8rem;
+    }
+
+    .pillar-item:last-child { margin-bottom: 0; }
+
+    .pillar-num {
+      width: 24px; height: 24px; flex-shrink: 0;
+      border-radius: 50%; border: 1px solid var(--gold-dim);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.62rem; color: var(--gold); font-weight: 700;
+    }
+
+    .pillar-text { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    .pillar-text strong { color: var(--text); }
+
+    /* Podcast player bar */
+    .audio-bar {
+      display: flex; align-items: center; gap: 1.2rem;
+      background: var(--dark-4); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.2rem 1.5rem; margin-top: 2rem;
+    }
+
+    .audio-bar-icon {
+      width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%;
+      background: var(--gold); color: var(--black);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; cursor: none; transition: var(--t);
+    }
+
+    .audio-bar-icon:hover { background: var(--gold-light); transform: scale(1.05); }
+
+    .audio-bar-info { flex: 1; }
+
+    .audio-bar-title {
+      font-size: 0.8rem; color: var(--text); font-weight: 500; margin-bottom: 0.5rem;
+    }
+
+    .audio-bar-track {
+      width: 100%; height: 3px; background: var(--dark-5);
+      border-radius: 2px; overflow: hidden;
+    }
+
+    .audio-bar-fill {
+      height: 100%; width: 33%;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      border-radius: 2px;
+    }
+
+    .audio-bar-time { font-size: 0.7rem; color: var(--text-muted); }
+
+    /* ═══════════════════════════════════════════
+       LIGHTBOX
+    ═══════════════════════════════════════════ */
+    #lightbox {
+      position: fixed; inset: 0; z-index: 800;
+      background: rgba(3,3,3,0.97);
+      backdrop-filter: blur(12px);
+      display: none; align-items: center; justify-content: center; padding: 2rem;
+    }
+
+    #lightbox.open { display: flex; }
+
+    .lightbox-close {
+      position: absolute; top: 1.5rem; right: 1.5rem;
+      background: none; border: none; cursor: none;
+      color: var(--text-muted); font-size: 1.5rem;
+      transition: color var(--t); z-index: 1;
+    }
+
+    .lightbox-close:hover { color: var(--gold); }
+
+    #lightbox-content {
+      max-width: 1000px; width: 100%;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    #lightbox-content img {
+      max-width: 100%; max-height: 85vh;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      object-fit: contain;
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    footer {
+      background: var(--dark-2); border-top: 1px solid var(--border);
+      padding: 3rem 2.5rem;
+    }
+
+    .footer-inner {
+      max-width: 1280px; margin: 0 auto;
+      display: flex; align-items: center;
+      justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;
+    }
+
+    .footer-logo {
+      font-family: var(--font-d); font-size: 1.3rem;
+      font-weight: 700; color: var(--gold); letter-spacing: 0.12em;
+    }
+
+    .footer-links {
+      display: flex; gap: 2rem; list-style: none; flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); transition: color var(--t);
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy { font-size: 0.7rem; color: var(--text-dim); }
+
+    /* WhatsApp float */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 400;
+      width: 52px; height: 52px; background: var(--gold);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: var(--black); font-size: 1.3rem;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+      transition: var(--t); cursor: none;
+    }
+
+    .wa-float:hover { transform: scale(1.1); background: var(--gold-light); }
+
+    /* Scroll top */
+    #scroll-top {
+      position: fixed; bottom: 5.5rem; right: 2rem; z-index: 400;
+      width: 42px; height: 42px;
+      background: var(--dark-3); border: 1px solid var(--gold-dim);
+      border-radius: 50%; color: var(--gold); font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: none; opacity: 0; transition: opacity var(--t), background var(--t);
+      border: 1px solid var(--gold-dim);
+    }
+
+    #scroll-top.visible { opacity: 1; }
+    #scroll-top:hover { background: var(--gold-dim); }
+
+    /* Fade up */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .media-grid { grid-template-columns: repeat(2, 1fr); }
+      .featured-wrap { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .media-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .burger { display: flex; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 68px; left: 0; right: 0;
+        background: var(--dark-2); border-bottom: 1px solid var(--border);
+        padding: 1.5rem 2rem; gap: 1rem; z-index: 499;
+      }
+      body { cursor: auto; }
+      #cursor, #cursor-ring { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+      .article-card { padding: 2rem 1.5rem; }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-900">
+<body>
 
-    <nav class="fixed w-full z-50 glass border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-tighter">CMA <span class="text-blue-600">ZAMAN</span></div>
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="index.html" class="hover:text-blue-600 transition">Home</a>
-                <a href="index.html#blog" class="hover:text-blue-600 transition">Blog</a>
-                <!-- FIX 2: Was href=".html" — corrected to media.html -->
-                <a href="media.html" class="hover:text-blue-600 transition">Media</a>
-                <a href="index.html#profile" class="hover:text-blue-600 transition">Author</a>
-            </div>
-            <div class="flex items-center space-x-4">
-                <button id="darkToggle" class="p-2 rounded-full bg-slate-200 dark:bg-slate-800"><i class="fas fa-moon"></i></button>
-                <a href="index.html#contact" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold">Contact</a>
-            </div>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══════════════════════════════════════════
+       NAVBAR
+  ═══════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="landing.html" class="nav-logo">
+        <div class="nav-logo-badge">CZ</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">CMA ZAMAN</span>
+          <span class="nav-logo-sub">Tech · Lifestyle · Motivation</span>
         </div>
-    </nav>
-    
-    <section class="video-section">
-  <div class="video-container">
+      </a>
 
-    <h2 class="video-title">WELCOME</h2>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="landing.html">Home</a></li>
+        <li><a href="landing.html#destinations">Explore</a></li>
+        <li><a href="landing.html#business">Business</a></li>
+        <li><a href="media.html" class="active-page">Media</a></li>
+        <li><a href="landing.html#contact">Contact</a></li>
+      </ul>
 
-    <p class="video-description">
-      Discover insights, ideas, and practical knowledge through this video.
-      Stay inspired, stay informed, and keep growing.
-    </p>
-    
-    <div id="mediaGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/-vSn-pRUFM8"
-        title="YouTube video"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+      <div class="nav-right">
+        <a href="landing.html" class="nav-cta">← Back to Home</a>
+        <button class="burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-    
-    <div class="video-wrapper">
-      <iframe 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ
-"
-        title="YouTube video"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
-    </div>
+  </nav>
 
-
+  <!-- ═══════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════ -->
+  <div class="page-hero">
+    <div class="page-hero-orb page-hero-orb-1"></div>
+    <div class="page-hero-eyebrow">CMA ZAMAN</div>
+    <h1>Media <em>Hub</em></h1>
+    <p>Videos, podcasts, photography, and inspirational content; all in one place. Explore the visual and audio world of CMA Zaman.</p>
   </div>
-</section>
 
-    <section id="media-hub" class="pt-32 pb-20 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">CMA Media Gallery</h2>
-            </div>
-            
-    
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button class="filter-btn active px-6 py-2 rounded-full bg-blue-600 text-white font-semibold" data-type="all">All Media</button>
-                <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold" data-type="photo">Photography</button>
-                <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold" data-type="video">Video</button>
-                <button class="filter-btn px-6 py-2 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-semibold" data-type="audio">Podcasts</button>
-            </div>
-            
-                            <h5 class="video-title">Watch & Learn</h5>
-                <p class="text-slate-500 max-w-2xl mx-auto">Discover insights, ideas, and practical knowledge through this video. Stay inspired, stay informed, and keep growing.
-                </p>
-            
-            
+  <div class="gold-rule"></div>
 
-            <!-- FIX 3: All media items now properly inside mediaGrid -->
-            <div id="mediaGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-               
-
-                <!-- FIX 3: YouTube iframes moved INSIDE mediaGrid as proper media-item divs -->
-                <div class="media-item video rounded-3xl overflow-hidden" style="position:relative; padding-bottom:56.25%; height:0;">
-                    <iframe
-                        src="https://www.youtube.com/embed/M4JktCfaeJU"
-                        style="position:absolute; top:0; left:0; width:100%; height:100%;"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-
-                <div class="media-item video rounded-3xl overflow-hidden" style="position:relative; padding-bottom:56.25%; height:0;">
-                    <iframe
-                        src="https://www.youtube.com/embed/VYeufIxENFU"
-                        style="position:absolute; top:0; left:0; width:100%; height:100%;"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                
-                <div class="media-item video rounded-3xl overflow-hidden" style="position:relative; padding-bottom:56.25%; height:0;">
-                    <iframe
-                        src="https://www.youtube.com/embed/8uG0bDFI_NE"
-                        style="position:absolute; top:0; left:0; width:100%; height:100%;"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                                <div class="media-item audio p-8 bg-gradient-to-br from-slate-900 to-blue-900 rounded-3xl flex flex-col justify-between aspect-square group">
-                    <div>
-                        <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-6">
-                            <i class="fas fa-microphone-alt text-2xl"></i>
-                        </div>
-                        <h3 class="text-white text-xl font-bold">Awareness Podcast EP 0.1</h3>
-                        <p class="text-blue-200/60 mt-2">Topic: Roots🏝️</p>
-                    </div>
-                    <!-- Replace podcast-ep1.mp3 with your actual filename -->
-                    <audio controls class="w-full mt-4" style="filter: invert(1);">
-                        <source src="podcast-ep1.mp3" type="audio/mp3">
-                        Your browser does not support audio.
-                    </audio>
-                </div>
-                <div class="media-item audio p-8 bg-gradient-to-br from-slate-900 to-blue-900 rounded-3xl flex flex-col justify-between aspect-square group">
-    <div>
-        <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-lg flex items-center justify-center mb-6">
-            <i class="fas fa-microphone-alt text-2xl"></i>
-        </div>
-        <h3 class="text-white text-xl font-bold">Awareness Podcast EP 0.2</h3>
-        <p class="text-blue-200/60 mt-2">Topic: Roots🏝️</p>
+  <!-- ═══════════════════════════════════════════
+       FILTER BAR
+  ═══════════════════════════════════════════ -->
+  <div class="filter-bar">
+    <div class="filter-bar-inner">
+      <button class="filter-btn active" data-filter="all">
+        <i class="fas fa-th-large"></i> All Media
+      </button>
+      <button class="filter-btn" data-filter="video">
+        <i class="fas fa-play-circle"></i> Videos
+      </button>
+      <button class="filter-btn" data-filter="podcast">
+        <i class="fas fa-microphone"></i> Podcasts
+      </button>
+      <button class="filter-btn" data-filter="photo">
+        <i class="fas fa-image"></i> Photography
+      </button>
     </div>
-    <!-- Replace podcast-ep1.mp3 with your actual filename -->
-    <audio controls class="w-full mt-4" style="filter: invert(1);">
-        <source src="Podcast_Love- cma zaman2" type="audio/mpeg">
-        Your browser does not support audio.
-        </audio>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       FEATURED VIDEO
+  ═══════════════════════════════════════════ -->
+  <section class="featured-section" id="featured">
+    <div class="sec-inner">
+      <div class="featured-wrap fade-up">
+        <div class="featured-video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/-vSn-pRUFM8"
+            title="CMA ZAMAN Featured Video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
-        
-          <section class="pt-31 pb-22 px-6 max-w-4xl mx-auto">
-      <header class="mb-10 text-center">
-          <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-xs font-bold uppercase">Motivation</span>
-          <h1 class="text-4xl md:text-5xl font-bold mt-6 mb-4">How to Maintain Peak Performance in a Tech-Driven World</h1>
-          <div class="flex items-center justify-center space-x-4 text-slate-500 text-sm">
-              <img src="https://ui-avatars.com/api/?name=CMA+Zaman" class="w-8 h-8 rounded-full">
-              <span>By <strong>CMA Zaman</strong></span>
-          </div>
-      </header>
+        <div class="featured-text">
+          <span class="featured-badge"><i class="fas fa-star"></i> Featured</span>
+          <div class="sec-label">Welcome Video</div>
+          <h2 class="sec-title">Discover Insights, <em>Ideas &amp; Knowledge</em></h2>
+          <p>This featured video captures the essence of what CMA ZAMAN is about. Its a space where technology meets consciousness, where motivation meets awareness, and where every idea is designed to make you think deeper.</p>
+          <p>Stay inspired, stay informed, and keep growing. This is just the beginning of your journey here.</p>
+        </div>
+      </div>
+    </div>
   </section>
-        <article class="prose prose-lg dark:prose-invert max-w-none text-slate-700 dark:text-slate-300 leading-relaxed">
-            <p class="mb-6 text-xl font-light italic border-l-4 border-blue-600 pl-6">"Technology should be a tool for our evolution, not a cage for our attention."</p>
-            
-            <p class="mb-4">In today's fast-paced environment, the overlap between our digital tools and our lifestyle habits is inseparable. To truly scale your output, you must audit your digital consumption...</p>
 
-            <div class="my-10 p-6 bg-slate-900 rounded-2xl text-white flex items-center gap-6">
-                <button id="playAudio" class="w-14 h-14 bg-blue-600 rounded-full flex items-center justify-center hover:scale-110 transition">
-                    <i class="fas fa-play"></i>
-                </button>
-                <div class="flex-1">
-                    <p class="text-sm font-bold">Listen to this article (Podcast Version)</p>
-                    <div class="w-full bg-slate-700 h-1 mt-2 rounded-full overflow-hidden">
-                        <div class="bg-blue-500 h-full w-1/3"></div>
-                    </div>
-                </div>
-                <span class="text-xs opacity-60">12:45</span>
+  <div class="gold-rule"></div>
+
+  <!-- ═══════════════════════════════════════════
+       MEDIA GRID
+  ═══════════════════════════════════════════ -->
+  <section class="media-section" id="media-grid-section">
+    <div class="sec-inner">
+      <div class="sec-label fade-up">All Content</div>
+      <h2 class="sec-title fade-up">Browse the <em>Collection</em></h2>
+
+      <div class="media-grid" id="media-grid">
+
+        <!-- VIDEO 1 -->
+        <div class="media-card fade-up" data-type="video">
+          <div class="mc-video">
+            <iframe
+              src="https://www.youtube.com/embed/M4JktCfaeJU"
+              title="Video 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="mc-body">
+            <span class="mc-type-badge"><i class="fas fa-play"></i> Video</span>
+            <div class="mc-title">Insight &amp; Growth</div>
+            <div class="mc-desc">A deep dive into personal development, awareness, and the mindset shifts that create lasting change.</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 2 -->
+        <div class="media-card fade-up" data-type="video">
+          <div class="mc-video">
+            <iframe
+              src="https://www.youtube.com/embed/VYeufIxENFU"
+              title="Video 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="mc-body">
+            <span class="mc-type-badge"><i class="fas fa-play"></i> Video</span>
+            <div class="mc-title">Technology &amp; The Human Mind</div>
+            <div class="mc-desc">Exploring how technology intersects with consciousness and how to use it with intention rather than compulsion.</div>
+          </div>
+        </div>
+
+        <!-- VIDEO 3 -->
+        <div class="media-card fade-up" data-type="video">
+          <div class="mc-video">
+            <iframe
+              src="https://www.youtube.com/embed/8uG0bDFI_NE"
+              title="Video 3"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="mc-body">
+            <span class="mc-type-badge"><i class="fas fa-play"></i> Video</span>
+            <div class="mc-title">Motivation &amp; Discipline</div>
+            <div class="mc-desc">Why discipline outlasts motivation every time, and the daily systems that high performers use to stay consistent.</div>
+          </div>
+        </div>
+
+        <!-- PODCAST EP 1 -->
+        <div class="media-card fade-up" data-type="podcast">
+          <div class="mc-podcast">
+            <div class="mc-podcast-icon"><i class="fas fa-microphone"></i></div>
+            <span class="mc-type-badge"><i class="fas fa-microphone"></i> Podcast</span>
+            <div class="mc-title">Awareness Podcast — EP 0.1</div>
+            <div class="mc-desc" style="margin-bottom:1rem;">Topic: <strong style="color:var(--text);">Roots 🏝️</strong> ~ Understanding where you come from as the foundation of where you're going.</div>
+            <div class="mc-audio">
+              <audio controls>
+                <source src="podcast-ep1.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+              </audio>
             </div>
+          </div>
+        </div>
 
-            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mt-10 mb-4">The 3 Pillars of CMA Performance</h2>
-            <ul class="list-disc pl-6 space-y-2 mb-10">
-                <li><strong>Digital Fasting:</strong> Turn off notifications for 2 hours daily.</li>
-                <li><strong>Tech Stacking:</strong> Using AI to automate 40% of repetitive tasks.</li>
-                <li><strong>Mental Clarity:</strong> Morning motivation rituals before the first screen.</li>
-            </ul>
-        </article>
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/95 hidden items-center justify-center p-4">
-        <button onclick="closeLightbox()" class="absolute top-8 right-8 text-white text-4xl hover:text-blue-500 transition">&times;</button>
-        <div id="lightboxContent" class="max-w-5xl w-full h-auto max-h-[80vh] flex items-center justify-center"></div>
+        <!-- PODCAST EP 2 -->
+        <div class="media-card fade-up" data-type="podcast">
+          <div class="mc-podcast">
+            <div class="mc-podcast-icon"><i class="fas fa-microphone"></i></div>
+            <span class="mc-type-badge"><i class="fas fa-microphone"></i> Podcast</span>
+            <div class="mc-title">Awareness Podcast — EP 0.2</div>
+            <div class="mc-desc" style="margin-bottom:1rem;">Topic: <strong style="color:var(--text);">Love 💛</strong> ~ What love truly is beyond the surface, and how it connects to self-awareness.</div>
+            <div class="mc-audio">
+              <audio controls>
+                <source src="Podcast_Love-cma-zaman2.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+              </audio>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHOTO 1 -->
+        <div class="media-card fade-up" data-type="photo" onclick="openLightbox('https://i.postimg.cc/nzHFvGst/IMG_0398.png')">
+          <div class="mc-photo">
+            <img src="https://i.postimg.cc/nzHFvGst/IMG_0398.png" alt="CMA Zaman Photography" loading="lazy">
+            <div class="mc-photo-overlay">
+              <div class="mc-photo-expand"><i class="fas fa-expand"></i></div>
+            </div>
+          </div>
+          <div class="mc-body">
+            <span class="mc-type-badge"><i class="fas fa-camera"></i> Photo</span>
+            <div class="mc-title">Visual Identity</div>
+            <div class="mc-desc">A moment captured  identity, presence, and the quiet power of being fully yourself.</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 2 -->
+        <div class="media-card fade-up" data-type="photo" onclick="openLightbox('https://i.postimg.cc/CLbzr637/media-1772819598763-(1)-(1).jpg')">
+          <div class="mc-photo">
+            <img src="https://i.postimg.cc/CLbzr637/media-1772819598763-(1)-(1).jpg" alt="CMA Media" loading="lazy">
+            <div class="mc-photo-overlay">
+              <div class="mc-photo-expand"><i class="fas fa-expand"></i></div>
+            </div>
+          </div>
+          <div class="mc-body">
+            <span class="mc-type-badge"><i class="fas fa-camera"></i> Photo</span>
+            <div class="mc-title">Behind the Lens</div>
+            <div class="mc-desc">Stories told not through words, but through light, composition, and the perfect moment.</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 3 -->
+        <div class="media-card fade-up" data-type="photo" onclick="openLightbox('https://i.postimg.cc/SRbck5jF/IMG-0397.jpg')">
+          <div class="mc-photo">
+            <img src="https://i.postimg.cc/SRbck5jF/IMG-0397.jpg" alt="Consciousness" loading="lazy">
+            <div class="mc-photo-overlay">
+              <div class="mc-photo-expand"><i class="fas fa-expand"></i></div>
+            </div>
+          </div>
+          <div class="mc-body">
+            <span class="mc-type-badge"><i class="fas fa-camera"></i> Photo</span>
+            <div class="mc-title">Consciousness Beyond Time</div>
+            <div class="mc-desc">A visual meditation on awareness, awakening, and the layers of reality beyond what the eye sees.</div>
+          </div>
+        </div>
+
+        <!-- PHOTO 4 -->
+        <div class="media-card fade-up" data-type="photo" onclick="openLightbox('https://i.postimg.cc/T3L2LhDh/media-1772307026355.png')">
+          <div class="mc-photo">
+            <img src="https://i.postimg.cc/T3L2LhDh/media-1772307026355.png" alt="CMA Portrait" loading="lazy">
+            <div class="mc-photo-overlay">
+              <div class="mc-photo-expand"><i class="fas fa-expand"></i></div>
+            </div>
+          </div>
+          <div class="mc-body">
+            <span class="mc-type-badge"><i class="fas fa-camera"></i> Photo</span>
+            <div class="mc-title">The Author</div>
+            <div class="mc-desc">A glimpse into the person behind CMA ZAMAN. The thoughts, the vision, and the mission.</div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- FIX 4: Removed stray I'm" text from footer -->
-    <footer class="py-12 border-t border-slate-100 dark:border-slate-800 text-center">
-        <p class="text-slate-400">© 2026 CMA ZAMAN. All rights reserved.</p>
-    </footer>
+  <div class="gold-rule"></div>
 
-    <script>
-        // Dark Mode Toggle
-        const darkToggle = document.getElementById('darkToggle');
-        darkToggle.addEventListener('click', () => {
-            document.documentElement.classList.toggle('dark');
-            darkToggle.innerHTML = document.documentElement.classList.contains('dark') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        });
+  <!-- ═══════════════════════════════════════════
+       ARTICLE HIGHLIGHT
+  ═══════════════════════════════════════════ -->
+  <section class="article-section">
+    <div class="sec-inner">
+      <div class="sec-label fade-up">Featured Read</div>
+      <h2 class="sec-title fade-up">Peak Performance in a <em>Tech-Driven World</em></h2>
 
-        // Filtering Logic
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const mediaItems = document.querySelectorAll('.media-item');
+      <div class="article-card fade-up">
+        <div class="article-quote">
+          "Technology should be a tool for our evolution, not a cage for our attention."
+        </div>
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('bg-blue-600', 'text-white'));
-                btn.classList.add('bg-blue-600', 'text-white');
-                const type = btn.dataset.type;
-                mediaItems.forEach(item => {
-                    if (type === 'all' || item.classList.contains(type)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
+        <div class="article-body">
+          <p>In today's fast paced environment, the overlap between our digital tools and our lifestyle habits is inseparable. To truly scale your output, you must audit your digital consumption and replace passive scrolling with purposeful engagement.</p>
+          <p>The highest performers in the world are not those with the most apps. They are those who have mastered the discipline of intention using technology to amplify their focus rather than fragment it.</p>
+        </div>
 
-        // Lightbox Logic
-        const lightbox = document.getElementById('lightbox');
-        const content = document.getElementById('lightboxContent');
+        <div class="article-pillars">
+          <h3>The 3 Pillars of CMA Performance</h3>
+          <div class="pillar-item">
+            <div class="pillar-num">1</div>
+            <div class="pillar-text"><strong>Digital Fasting:</strong> Turn off all non-essential notifications for a minimum of 2 hours daily. Reclaim your attention before it is monetized by someone else.</div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-num">2</div>
+            <div class="pillar-text"><strong>Tech Stacking:</strong>  Use AI and automation to handle 40% of repetitive tasks. Your mental bandwidth is your most finite resource, protect it fiercely.</div>
+          </div>
+          <div class="pillar-item">
+            <div class="pillar-num">3</div>
+            <div class="pillar-text"><strong>Mental Clarity Ritual:</strong>  Begin every morning with a clarity practice before the first screen. Stillness before stimulus. Intention before input.</div>
+          </div>
+        </div>
 
-        function openLightbox(type, src) {
-            content.innerHTML = '';
-            if (type === 'video') {
-                content.innerHTML = `<iframe src="${src}" class="w-full aspect-video rounded-xl shadow-2xl" frameborder="0" allowfullscreen></iframe>`;
-            } else if (type === 'image') {
-                content.innerHTML = `<img src="${src}" class="max-w-full max-h-[80vh] rounded-xl shadow-2xl object-contain">`;
-            }
-            lightbox.classList.remove('hidden');
-            lightbox.classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
+        <div class="audio-bar">
+          <div class="audio-bar-icon"><i class="fas fa-play"></i></div>
+          <div class="audio-bar-info">
+            <div class="audio-bar-title">Listen to this article Podcast Version</div>
+            <div class="audio-bar-track"><div class="audio-bar-fill"></div></div>
+          </div>
+          <span class="audio-bar-time">12:45</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // FIX 5: closeLightbox was broken across two lines — fixed
-        function closeLightbox() {
-            lightbox.classList.add('hidden');
-            lightbox.classList.remove('flex');
-            content.innerHTML = '';
-            document.body.style.overflow = 'auto';
-        }
-    </script>
+  <!-- ═══════════════════════════════════════════
+       LIGHTBOX
+  ═══════════════════════════════════════════ -->
+  <div id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <div id="lightbox-content"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">CMA ZAMAN</span>
+      <ul class="footer-links">
+        <li><a href="landing.html">Home</a></li>
+        <li><a href="landing.html#destinations">Blog</a></li>
+        <li><a href="landing.html#business">Business</a></li>
+        <li><a href="media.html">Media</a></li>
+        <li><a href="landing.html#contact">Contact</a></li>
+      </ul>
+      <span class="footer-copy">© 2025 CMA Zaman. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/2349136671282?text=Hello%20CMA,%20I%20would%20like%20to%20connect." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button id="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script>
+  /* ── Custom Cursor ── */
+  const cur  = document.getElementById('cursor');
+  const ring = document.getElementById('cursor-ring');
+  let mx=0, my=0, rx=0, ry=0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cur.style.left = mx + 'px';
+    cur.style.top  = my + 'px';
+  });
+
+  (function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animRing);
+  })();
+
+  document.querySelectorAll('a, button, [onclick]').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+  });
+
+  /* ── Burger ── */
+  document.getElementById('burger').addEventListener('click', () => {
+    document.getElementById('nav-links').classList.toggle('open');
+  });
+
+  /* ── Scroll Top ── */
+  const stBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => stBtn.classList.toggle('visible', window.scrollY > 400));
+  stBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  /* ── Fade Up Observer ── */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+  /* ── Media Filter ── */
+  const filterBtns  = document.querySelectorAll('.filter-btn');
+  const mediaCards  = document.querySelectorAll('.media-card[data-type]');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      mediaCards.forEach(card => {
+        const show = f === 'all' || card.dataset.type === f;
+        card.classList.toggle('hidden', !show);
+      });
+    });
+  });
+
+  /* ── Lightbox ── */
+  function openLightbox(src) {
+    const lb  = document.getElementById('lightbox');
+    const lbc = document.getElementById('lightbox-content');
+    lbc.innerHTML = `<img src="${src}" alt="CMA ZAMAN Media">`;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.getElementById('lightbox-content').innerHTML = '';
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('lightbox').addEventListener('click', e => {
+    if (e.target === document.getElementById('lightbox')) closeLightbox();
+  });
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+
 </body>
-                    </html>
-    
+</html>
