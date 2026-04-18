@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- MAIN PAGES -->
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/blog.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/media.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- TECHNOLOGY -->
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/tech-ai-future.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/tech-digital-wellness.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- LIFESTYLE -->
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/lifestyle-morning-routine.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/lifestyle-minimalism.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- MOTIVATION -->
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/motivation-purpose.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/motivation-discipline.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AWAKENING -->
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/awakening-transformation.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/awakening-ego.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- LOVE -->
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/love-self-love.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/love-deep-connection.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/love-culture-universal-laws.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/love-nature-divine-gift.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- SPIRITUALITY -->
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/spirituality-inner-peace.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/spirituality-gratitude.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- AWARENESS -->
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/awareness-present-moment.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/awareness-mindful-tech.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://cmawurld3-create.github.io/cmazaman-blog-page/articles/awareness-emotional-manipulation.html</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
