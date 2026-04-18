@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://cmawurld3-create.github.io/cmazaman-blog-page/sitemap.xml
